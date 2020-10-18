@@ -23,13 +23,10 @@ pipelines:
           configFileName: "settings.xml"
           forceXrayScan: "true"
           failOnScan: true
-          autoPublishBuildInfo: "true"
           integrations:
             - name: freeTierArtifactory
           inputResources:
             - name: demoGithub
-          outputResources:
-            - name: "mvnBuildStep"
         execution:
           onStart:
             - echo "Mvn deploying to Artifactory OSS"
