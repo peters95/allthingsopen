@@ -1,0 +1,48 @@
+apiVersion: v1.1
+resources:
+  - name: demoGithub
+    type: GitRepo
+    configuration:
+      gitProvider: Github
+      path: peters95/allthingsopen
+  - name: freeTier
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: freeTierArtifactory
+      buildName: freeTierMavenBuild
+      buildNumber: 1
+pipelines:
+  - name: mvnBuildFreeTier
+    steps:
+      - name: mvnBuildStep
+        type: MvnBuild
+        configuration:
+          mvnCommand: "mvn clean deploy -DskipTests=true"
+          sourceLocation: "."
+          configFileLocation: "."
+          configFileName: "settings.xml"
+          forceXrayScan: "true"
+          failOnScan: true
+          autoPublishBuildInfo: "true"
+          integrations:
+            - name: freeTier
+          inputResources:
+            - name: demoGithub
+          outputResources:
+            - name: "mvnBuildStep"
+        execution:
+          onStart:
+            - echo "Mvn deploying to Artifactory OSS"
+          onSuccess:
+            - echo "Deployed successfully!"
+          onFailure:
+            - echo "Uh oh, something went wrong"
+          onComplete:      
+            - echo "Cleaning up some stuff"
+      - name: publish_build_info
+        type: PublishBuildInfo
+        configuration:
+          inputSteps:
+            - name: mvnBuildStep
+          outputResources:
+            - name: freeTier
