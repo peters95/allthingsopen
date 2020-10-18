@@ -3,7 +3,7 @@ resources:
   - name: demoGithub
     type: GitRepo
     configuration:
-      gitProvider: Github
+      gitProvider: GitHub
       path: peters95/allthingsopen
   - name: freeTier
     type: BuildInfo
