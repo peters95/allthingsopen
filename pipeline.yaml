@@ -25,7 +25,7 @@ pipelines:
           failOnScan: true
           autoPublishBuildInfo: "true"
           integrations:
-            - name: freeTier
+            - name: freeTierArtifactory
           inputResources:
             - name: demoGithub
           outputResources:
