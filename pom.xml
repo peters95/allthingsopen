@@ -55,13 +55,13 @@
   <distributionManagement>
     <repository>
         <id>central</id>
-        <name>artifactory-oss-artifactory-0-releases</name>
-        <url>https://ato.jfrog.tech/artifactory/libs-release</url>
+        <name>lib-virtual</name>
+        <url>https://swampup.jfrog.tech/artifactory/lib-virtual</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>artifactory-oss-artifactory-0-snapshots</name>
-        <url>https://ato.jfrog.tech/artifactory/libs-snapshot</url>
+        <name>lib-virtual</name>
+        <url>https://swampup.jfrog.tech/artifactory/lib-virtual</url>
     </snapshotRepository>
   </distributionManagement>
   <build>
