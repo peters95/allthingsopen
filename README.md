@@ -7,14 +7,14 @@ Example demo to deploy a maven project to Artifactory with Build Info.
 Run:
 
 ````bash
-mvn clean deploy -DskipTests=true -Dusername=${username} -Dpassword=${password} -Dbuildnumber=${buildnumber}
+mvn clean deploy -DskipTests=true -Dusername=${username} -Dpassword=${password} -DbuildNumber=${buildNumber} -DbuildName=${buildName}
 ````
 
 ## Maven Setup
 
-Maven settings.xml must be configured to use your Artifactor instance.
+Maven settings.xml must be configured to use your Artifactory instance.
 
-Use the "Set me up" link in Artifactory OSS to download a settings.xml to use.
+Use the "Set me up" link in Artifactory to download a settings.xml to use.
 
 Modify it with your username and password. Note password encryption is recommended.
 
@@ -24,7 +24,7 @@ Modify it with your username and password. Note password encryption is recommend
 Run:
 
 ````bash
-mvn clean deploy -DskipTests=true -Dusername=${username} -Dpassword=${password} -Dbuildnumber=${buildnumber}
+mvn clean deploy -DskipTests=true -Dusername=${username} -Dpassword=${password} -DbuildNumber=${buildNumber} -DbuildName=${buildName}
 ````
 
 Where:
