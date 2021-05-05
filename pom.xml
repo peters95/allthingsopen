@@ -91,11 +91,11 @@
                                 <username>${username}</username>
                                 <password>${password}</password>
                                 <excludePatterns>*-tests.jar</excludePatterns>
-                                <repoKey>libs-release-local</repoKey>
-                                <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
+                                <repoKey>lib-virtual</repoKey>
+                                <snapshotRepoKey>lib-virtual</snapshotRepoKey>
                             </publisher>
                             <buildInfo>
-                                <buildName>ato-demo</buildName>
+                                <buildName>swamp-maven-demo</buildName>
                                 <buildNumber>${buildnumber}</buildNumber>
                                 <buildUrl>https://swampup.jfrog.tech</buildUrl>
                             </buildInfo>
