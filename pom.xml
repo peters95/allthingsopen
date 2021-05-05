@@ -95,8 +95,8 @@
                                 <snapshotRepoKey>lib-virtual</snapshotRepoKey>
                             </publisher>
                             <buildInfo>
-                                <buildName>swamp-maven-demo</buildName>
-                                <buildNumber>${buildnumber}</buildNumber>
+                                <buildName>${buildName}</buildName>
+                                <buildNumber>${buildNumber}</buildNumber>
                                 <buildUrl>https://swampup.jfrog.tech</buildUrl>
                             </buildInfo>
                         </configuration>
