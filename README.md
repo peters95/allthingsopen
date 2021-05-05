@@ -1,8 +1,8 @@
-# All Things Open
+# Swampup 2021 
 
-## Artifactory OSS + Maven
+## Artifactory + Maven
 
-Example demo to deploy a maven project to Artifactory OSS with Build Info.
+Example demo to deploy a maven project to Artifactory with Build Info.
 
 Run:
 
@@ -12,7 +12,7 @@ mvn clean deploy -DskipTests=true -Dusername=${username} -Dpassword=${password} 
 
 ## Maven Setup
 
-Maven settings.xml must be configured to use your Artifactory OSS instance.
+Maven settings.xml must be configured to use your Artifactor instance.
 
 Use the "Set me up" link in Artifactory OSS to download a settings.xml to use.
 
@@ -29,9 +29,9 @@ mvn clean deploy -DskipTests=true -Dusername=${username} -Dpassword=${password} 
 
 Where:
 
-username is your Artifactory OSS user you wish to authenicate
+username is your Artifactory user you wish to authenicate
 
-password is your Artifactory OSS user's password
+password is your Artifactory user's password
 
 buildnumber is the number you want to assign this build. Note default will use current timestamp in milliseconds.
 
