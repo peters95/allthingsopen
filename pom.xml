@@ -87,7 +87,7 @@
                                 <timeoutSec>60</timeoutSec>
                             </artifactory>
                             <publisher>
-                                <contextUrl>https://ato.jfrog.tech/artifactory</contextUrl>
+                                <contextUrl>https://swampup.jfrog.tech/artifactory</contextUrl>
                                 <username>${username}</username>
                                 <password>${password}</password>
                                 <excludePatterns>*-tests.jar</excludePatterns>
@@ -97,7 +97,7 @@
                             <buildInfo>
                                 <buildName>ato-demo</buildName>
                                 <buildNumber>${buildnumber}</buildNumber>
-                                <buildUrl>https://ato.jfrog.tech</buildUrl>
+                                <buildUrl>https://swampup.jfrog.tech</buildUrl>
                             </buildInfo>
                         </configuration>
                     </execution>
