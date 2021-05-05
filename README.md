@@ -1,13 +1,18 @@
 # Swampup 2021 
 
-## Artifactory + Maven
+## Artifactory + Maven + Build Info
 
 Example demo to deploy a maven project to Artifactory with Build Info.
 
 Run:
 
 ````bash
-mvn clean deploy -DskipTests=true -Dusername=${username} -Dpassword=${password} -DbuildNumber=${buildNumber} -DbuildName=${buildName}
+export BUILD_NUMBER=1
+export BUILD_NAME=swampup-maven-project
+jfrog rt mvn clean deploy -DbuildNumber=${BUILD_NUMBER} -DbuildName=${BUILD_NAME}  -DskipTests=true
+jfrog rt bag ${BUILD_NAME} ${BUILD_NUMBER} --config=$HOME/.jfrog/jira-cli.conf
+jfrog rt bce ${BUILD_NAME} ${BUILD_NUMBER}
+jfrog rt bp ${BUILD_NAME} ${BUILD_NUMBER}
 ````
 
 ## Maven Setup
@@ -18,13 +23,28 @@ Use the "Set me up" link in Artifactory to download a settings.xml to use.
 
 Modify it with your username and password. Note password encryption is recommended.
 
-## Demo
+## JFrog CLI Setup
 
+The JFrog CLI is required to be setup for this demo.
+
+Please follow this [blog](https://jfrog.com/blog/using-jfrog-cli-to-see-your-builds-up-close/) to setup the CLI with the necessary configuration file.
+
+
+
+
+## Deployment Demo
 
 Run:
 
 ````bash
-mvn clean deploy -DskipTests=true -Dusername=${username} -Dpassword=${password} -DbuildNumber=${buildNumber} -DbuildName=${buildName}
+export BUILD_NUMBER=2
+export JIRA_ENVIRONMENT_ID=<ENVIRONMENT_ID>
+export JIRA_ENVIRONMENT_NAME=<ENVIRONMENT_NAME>
+export JIRA_DEPLOYMENT_STATUS=<successful,failure,pending>
+export JIRA_ENVIRONMENT_TYPE=<development,testing,staging,production>
+jfrog rt bag ${BUILD_NAME} ${BUILD_NUMBER} --config=$HOME/.jfrog/jira-cli.conf
+jfrog rt bce ${BUILD_NAME} ${BUILD_NUMBER}
+jfrog rt bp ${BUILD_NAME} ${BUILD_NUMBER}
 ````
 
 Where:
