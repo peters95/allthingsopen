@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-export BUILD_NUMBER=2
-export BUILD_NAME=swampup_maven_deploy
+export BUILD_NUMBER=1
+export BUILD_NAME=swampup_demo_prep1
 export JIRA_ENVIRONMENT_ID=JFrogEnvironment_dev_${BUILD_NUMBER} 
 export JIRA_ENVIRONMENT_NAME=JFrogEnvironment_dev_${BUILD_NUMBER} 
 export JIRA_DEPLOYMENT_STATUS=successful
@@ -10,7 +10,7 @@ jfrog rt bag ${BUILD_NAME} ${BUILD_NUMBER} --config=$HOME/.jfrog/jira-cli.conf
 jfrog rt bce ${BUILD_NAME} ${BUILD_NUMBER} 
 jfrog rt bp ${BUILD_NAME} ${BUILD_NUMBER}
 echo "Deploying to Test Environment"
-export BUILD_NUMBER=3
+export BUILD_NUMBER=2
 export JIRA_ENVIRONMENT_ID=JFrogEnvironment_test_${BUILD_NUMBER}                            
 export JIRA_ENVIRONMENT_NAME=JFrogEnvironment_test_${BUILD_NUMBER}                            
 export JIRA_DEPLOYMENT_STATUS=successful
@@ -19,7 +19,7 @@ jfrog rt bag ${BUILD_NAME} ${BUILD_NUMBER} --config=$HOME/.jfrog/jira-cli.conf
 jfrog rt bce ${BUILD_NAME} ${BUILD_NUMBER}
 jfrog rt bp ${BUILD_NAME} ${BUILD_NUMBER}
 echo "Deploying to Staging Environment"
-export BUILD_NUMBER=4
+export BUILD_NUMBER=3
 export JIRA_ENVIRONMENT_ID=JFrogEnvironment_stage_${BUILD_NUMBER}
 export JIRA_ENVIRONMENT_NAME=JFrogEnvironment_stage_${BUILD_NUMBER}
 export JIRA_DEPLOYMENT_STATUS=successful
@@ -28,7 +28,7 @@ jfrog rt bag ${BUILD_NAME} ${BUILD_NUMBER} --config=$HOME/.jfrog/jira-cli.conf
 jfrog rt bce ${BUILD_NAME} ${BUILD_NUMBER}
 jfrog rt bp ${BUILD_NAME} ${BUILD_NUMBER}
 echo "Deploying to Production Environment"
-export BUILD_NUMBER=5
+export BUILD_NUMBER=4
 export JIRA_ENVIRONMENT_ID=JFrogEnvironment_prod_${BUILD_NUMBER}
 export JIRA_ENVIRONMENT_NAME=JFrogEnvironment_prod_${BUILD_NUMBER}
 export JIRA_DEPLOYMENT_STATUS=successful
