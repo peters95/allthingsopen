@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 export BUILD_NUMBER=1
-export BUILD_NAME=swampup_demo_prep1
 export JIRA_ENVIRONMENT_ID=JFrogEnvironment_dev_${BUILD_NUMBER} 
 export JIRA_ENVIRONMENT_NAME=JFrogEnvironment_dev_${BUILD_NUMBER} 
 export JIRA_DEPLOYMENT_STATUS=successful
